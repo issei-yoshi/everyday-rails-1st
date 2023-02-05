@@ -11,6 +11,15 @@ module Projects
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    config.generators do |g|
+      g.test_framework :rspec,
+        fixtures: false, #テストデータベースにレコードを作成するファイルを作成しない
+        view_specs: false, #ビュースペックを作成しない
+        helper_specs: false, #ヘルパーファイル用のスペックを使用しない
+        routing_specs: false #routes用のスペックを作成しない
+      g.factory_bot false
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
