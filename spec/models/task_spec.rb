@@ -18,7 +18,7 @@ RSpec.describe Task, type: :model do
   end
 
   it "is invalid without a name" do
-    task = Task.name(name: nil)
+    task = Task.new(name: nil)
     task.valid?
     expect(task.errors[:name]).to include("can't be blank")
   end
