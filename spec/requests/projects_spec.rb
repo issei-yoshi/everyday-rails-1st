@@ -18,7 +18,7 @@ RSpec.describe "Projects", type: :request do
 
     context "with invalid attributes" do
       it "does not add a project" do
-        project_params = FactoryBot.attributes_for(:projject, :invalid)
+        project_params = FactoryBot.attributes_for(:project, :invalid)
         sign_in @user
         expect {
           post projects_path, params: { project: project_params }
