@@ -5,8 +5,7 @@ RSpec.describe "Notes", type: :system do
   let(:project) {
     FactoryBot.create(:project,
       name: "RSpec tutorial",
-      owner: user
-    )
+      owner: user)
   }
 
   scenario "user uploads an attachment" do
@@ -18,6 +17,6 @@ RSpec.describe "Notes", type: :system do
     click_button "Create Note"
     expect(page).to have_content "Note was successfully created"
     expect(page).to have_content "My book cover"
-    expect(page).to have_content "attachment.jpg(image/jpeg"
+    expect(page).to have_content "attachment.jpg (image/jpeg"
   end
 end
