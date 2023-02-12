@@ -47,6 +47,6 @@ RSpec.describe User, type: :model do
       user.geocode
     }.to change(user, :location).
       from(nil).
-      to("Brooklyn, New York, US")
+      to("New York City, New York, US")
   end
 end
