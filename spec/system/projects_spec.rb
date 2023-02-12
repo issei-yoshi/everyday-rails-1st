@@ -21,7 +21,7 @@ RSpec.describe "Projects", type: :system do
     end
   end
 
-  scenario "user completes a project", focus: true do
+  scenario "user completes a project" do
     # プロジェクトを持ったユーザーを準備
     user = FactoryBot.create(:user)
     project = FactoryBot.create(:project, owner: user)
@@ -29,6 +29,8 @@ RSpec.describe "Projects", type: :system do
     sign_in user
     # ユーザーがプロジェクト画面を開いて
     visit project_path(project)
+
+    expect(page).to_not have_content "Completed"
     # ボタンをクリックすると
     click_button "Complete"
     # save_and_open_page
